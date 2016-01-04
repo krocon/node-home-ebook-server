@@ -1,0 +1,6 @@
+
+.k-view {overflow-y: auto;}
+.k-view .k-view-inner-big-div {overflow-y: hidden; width:100%;}
+.k-view .k-view-inner-small-div {overflow-y: hidden; width:100%;position:relative;}
+.k-view .k-view-cell { border:0;position:relative; float:left;}
+

@@ -1,0 +1,43 @@
+#filter-input-group div {padding-right:0;}
+#info {text-align: right;padding-bottom: 0;}
+#detailsInfo {height: 100%;}
+#detailsDlg .modal-dialog {width: 100%;}
+#detailsDlg .modal-dialog img.cover {width: 100%;}
+
+nav h2, nav h3 {margin-top:0;}
+.k-view-cell {overflow: hidden;cursor: pointer;}
+
+span.glyphicon-refresh-animate {
+    -webkit-animation: rotateThis .5s infinite linear;
+    -moz-animation: rotateThis .5s infinite linear;
+    -ms-animation: rotateThis .5s infinite linear;
+    -o-animation: rotateThis .5s infinite linear;
+    animation: rotateThis .5s infinite linear;
+}
+
+@-webkit-keyframes rotateThis {
+    from { -webkit-transform: scale( 1 ) rotate( 0deg );   }
+    to   { -webkit-transform: scale( 1 ) rotate( 360deg ); }
+}
+@-moz-keyframes rotateThis {
+    from { -moz-transform: scale( 1 ) rotate( 0deg );   }
+    to   { -moz-transform: scale( 1 ) rotate( 360deg ); }
+}
+@-o-keyframes rotateThis {
+    from { -o-transform: scale( 1 ) rotate( 0deg );   }
+    to   { -o-transform: scale( 1 ) rotate( 360deg ); }
+}
+@-ms-keyframes rotateThis {
+    from { -ms-transform: scale( 1 ) rotate( 0deg );   }
+    to   { -ms-transform: scale( 1 ) rotate( 360deg ); }
+}
+@keyframes rotateThis {
+    from { transform: scale( 1 ) rotate( 0deg );   }
+    to   { transform: scale( 1 ) rotate( 360deg ); }
+}
+
+html, body {height: 100%;background: #060606;}
+body.dark input {background: #222;}
+body.dark .navbar.navbar-fixed-top {
+    background:rgba(0,0,0,.75);
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>ebooks</title>
+    <link rel="stylesheet" href="bootstrap-3.3.6/css/bootstrap-cyborg.min.css" id="theme-css">
+    <link rel="stylesheet" href="css/all1.min.css">
+    <link rel="shortcut icon" href="img/favicon.ico">
+</head>
+<body class="dark">
+
+<nav id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <form>
+        <div class="form-group" id="filter-input-group">
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <h3 id="appTitle">books</h3>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <input type="text" id="filter" class="form-control" placeholder="Filter" style="display:none;">
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5">
+                <p class="form-control-static" id="info">&nbsp;</p>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <a href="javascript:void(0)" id="fullScreenToggler" class="btn btn-link pull-right" title="Toggle fullscreen" style="display: none;"><span class="glyphicon glyphicon-fullscreen"></span></a>
+                <a href="javascript:void(0)" id="sizeToggler" class="btn btn-link pull-right" title="Toggle image size"><span class="glyphicon glyphicon-text-size"></span></a>
+            </div>
+        </div>
+    </form>
+</nav>
+
+<div class="container-fluid toggle-container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 k-view" id="ebook-grid-view"></div>
+    </div>
+</div>
+
+<div id="detailsDlg"  class="modal fade" tabindex="-1" role="dialog"></div>
+
+<script id="templateDetails" type="x-tmpl-mustache">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">{{ title }}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                        <a href="{{ coverurl }}" target="_blank">
+                            <img class="cover" src="{{ coverurl }}">
+                        </a>
+                    </div>
+                    <div class="col-lg-9 col-md-6 col-sm-6 col-xs-12">
+                        <div id="detailsInfo"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <span class="pull-left form-control-static">Search:&nbsp;&nbsp;</span>
+                <a href="https://www.google.de/#q={{ title }}" target="_blank" class="btn btn-default pull-left">google.de</a>
+                <a href="http://www.isbn-suchen.de/search.php5?q={{ title }}" target="_blank" class="btn btn-default pull-left">isbn-suchen.de</a>
+                <a href="http://www.buch.de/shop/home/suche/?sq={{ title }}" target="_blank" class="btn btn-default pull-left">buch.de</a>
+
+                <a href="javascript:void(0);" target="_blank" type="button" class="btn btn-danger delete-btn"><i class="glyphicon glyphicon-trash"></i> Delete</a>
+                &nbsp;&nbsp;
+                {{#copyDir}}
+                    <a href="javascript:void(0);" target="_blank" type="button" class="btn btn-primary copy-btn" title="Copy to {{copyDir}}"><i class="glyphicon glyphicon-share"></i> Copy</a>
+                {{/copyDir}}
+                {{#sendattachment}}
+                    <a href="javascript:void(0);" target="_blank" type="button" class="btn btn-primary sendattachment-btn" title="Send attachment to {{sendattachment.to}}"><i class="glyphicon glyphicon-send"></i> {{sendattachment.title}}</a>
+                {{/sendattachment}}
+                {{#sendlink}}
+                    <a href="javascript:void(0);" target="_blank" type="button" class="btn btn-primary sendlink-btn" title="Send link to {{sendlink.to}}"><i class="glyphicon glyphicon-send"></i> {{sendlink.title}}</a>
+                {{/sendlink}}
+                {{#viewOnline}}
+                    <a href="reader.html?u={{ epuburl }}" target="_blank" type="button" class="btn btn-primary"><i class="glyphicon glyphicon-eye-open"></i> View Online</a>
+                {{/viewOnline}}
+                <a href="{{ epuburl }}" target="_blank" type="button" class="btn btn-primary"><i class="glyphicon glyphicon-download"></i> Download</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="templateDetailsData" type="x-tmpl-mustache">
+    {{#title}}<p><b>{{title}}</b></p>{{/title}}
+    {{#subtitle}}<p>{{subtitle}}</p>{{/subtitle}}
+    {{#desc}}<p>{{{desc}}}</p>{{/desc}}
+    {{#pages}}<p>Pages:</b> {{pages}}</p>{{/pages}}
+    {{#age}}<p>{{age}}</p>{{/age}}
+    {{#lang}}<p><b>Language:</b> {{lang}}</p>{{/lang}}
+    {{#publisher}}<p>{{publisher}}</p>{{/publisher}}
+    {{#isbn13}}<p>ISBN {{isbn13}}
+        ,   <a href="https://portal.dnb.de/opac.htm?query={{isbn13}}&method=simpleSearch" target="_blank">dnb.de</a>
+        ,   <a href="https://portal.dnb.de/opac/mvb/cover.htm?isbn={{isbn13}}" target="_blank">Cover by dnb...</a>
+        </p>{{/isbn13}}
+    {{#ean}}<p><b>EAN:</b> {{ean}}</p>{{/ean}}
+    {{#releaseDate}}<p>{{releaseDate}}</p>{{/releaseDate}}
+    {{#author}}<p><b>Author:</b> {{author}}</p>{{/author}}
+    {{#authorPortrait}}<p>{{{authorPortrait}}}</p>{{/authorPortrait}}
+</script>
+
+
+<script src="js/all1.min.js"></script>
+<script src="bootstrap-3.3.6/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
