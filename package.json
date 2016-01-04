@@ -1,7 +1,7 @@
 {
   "name": "home-ebook-server",
-  "version": "0.0.1",
-  "description": "Webserever for own ebook content: comics and epubs (cbr,cbz,cb7,epub)",
+  "version": "0.0.3",
+  "description": "Webserver for own ebook content: comics and epubs (cbr,cbz,cb7,epub)",
   "keywords": [
     "Cover",
     "Thumb",
