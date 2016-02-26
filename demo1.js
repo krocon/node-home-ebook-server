@@ -44,4 +44,18 @@
     };
     server.start(options);
 
+    var ecomic = require('ecomic');
+    ecomic.extractCoverGlob(options.baseDir + '/**/*.epub', {
+    //ecomic.extractCoverGlob('/Volumes/2TB/jdownload/_books/**/*.epub', {
+        overwrite:false,
+        quite:true,
+        tmpDir: '/Volumes/ramdisk/tmp',
+        outputs:[
+            {nameExtension: "", dimension: [420, 600]}
+        ]
+    }, function(err, files){
+        if (err) return console.error(err);
+        console.info(files);
+    });
+
 })();
