@@ -44,7 +44,7 @@
     };
     server.start(options);
 
-    var ecomic = require('ecomic');
+    var ecomic = require('ebook-cover-generator');
     ecomic.extractCoverGlob(options.baseDir + '/**/*.epub', {
     //ecomic.extractCoverGlob('/Volumes/2TB/jdownload/_books/**/*.epub', {
         overwrite:false,

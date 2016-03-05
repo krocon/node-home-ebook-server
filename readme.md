@@ -16,6 +16,7 @@ With help of a simple text input one can filter the list of the books.
 ### ebook-cover-generator
 This tool doesn't generate thumbs of your ebook.
 If you want to do this, you can use [ebook-cover-generator](https://www.npmjs.com/package/ebook-cover-generator).
+On Mac OS X I recommend this tool: [cover-generator-by-quicklook](https://www.npmjs.com/package/cover-generator-by-quicklook).
 
 ## Usage (script)
 ```js
@@ -43,8 +44,8 @@ server.start(options<Object>);
     ],
     dimIndex : 1,
     initialFilter: ''
-};
-server.start(options);
+  };
+  server.start(options);
 })();
 ```
 #### Second Example: 

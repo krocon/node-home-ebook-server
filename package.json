@@ -1,6 +1,6 @@
 {
   "name": "home-ebook-server",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Webserver for own ebook content: comics and epubs (cbr,cbz,cb7,epub)",
   "keywords": [
     "Cover",
@@ -29,7 +29,9 @@
     "recursive-readdir": "^1.3.0",
     "request": "^2.67.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "cover-generator-by-quicklook": "^0.0.5"
+  },
   "readmeFilename": "README.md",
   "license": "MIT",
   "repository": {

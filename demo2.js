@@ -23,7 +23,7 @@
     };
     server.start(options);
 
-    var ecomic = require('ecomic');
+    var ecomic = require('ebook-cover-generator');
     ecomic.extractCoverGlob(options.baseDir + '/**/*.cb*', {
         overwrite:false,
         quite:true,
