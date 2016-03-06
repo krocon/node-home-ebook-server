@@ -87,6 +87,7 @@ $(function () {
         var title = cutPath(cutSuffix(url));
         var rendered = Mustache.render(templateDetails, {
             title: title,
+            deletable: deletable,
             coverurl: img,
             epuburl: url,
             copyDir: copyDir,
@@ -159,6 +160,7 @@ $(function () {
             {width: 315, height: 450},
             {width: 420, height: 600}
         ];
+        deletable = options.deletable;
         sendOptions = options.sendOptions;
         copyDir = options.copyDir ? options.copyDir : null;
         sizeIdx = options.dimIndex ? options.dimIndex : 0;
@@ -223,7 +225,7 @@ $(function () {
 
         Mustache.parse(templateDetails);   // optional, speeds up future uses
     };
-
+    var deletable = false;
     var loadingInfo = '';
     var URL = 'files.json';
     var filtertimeout = null;

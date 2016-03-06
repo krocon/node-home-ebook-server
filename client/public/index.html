@@ -21,8 +21,9 @@
                 <a href="https://www.google.de/#q={{ title }}" target="_blank" class="btn btn-default pull-left">google.de</a>
                 <a href="http://www.isbn-suchen.de/search.php5?q={{ title }}" target="_blank" class="btn btn-default pull-left">isbn-suchen.de</a>
                 <a href="http://www.buch.de/shop/home/suche/?sq={{ title }}" target="_blank" class="btn btn-default pull-left">buch.de</a>
-
+                {{#deletable}}
                 <a href="javascript:void(0);" target="_blank" type="button" class="btn btn-danger delete-btn"><i class="glyphicon glyphicon-trash"></i> Delete</a>
+                {{/deletable}}
                 &nbsp;&nbsp;
                 {{#copyDir}}
                     <a href="javascript:void(0);" target="_blank" type="button" class="btn btn-primary copy-btn" title="Copy to {{copyDir}}"><i class="glyphicon glyphicon-share"></i> Copy</a>
