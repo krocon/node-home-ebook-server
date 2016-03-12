@@ -14,6 +14,7 @@ With help of a simple text input one can filter the list of the books.
 ## Getting started
 
 
+
 ### ebook-cover-generator
 This tool doesn't generate thumbs of your ebook.
 If you want to do this, you can use [ebook-cover-generator](https://www.npmjs.com/package/ebook-cover-generator).
