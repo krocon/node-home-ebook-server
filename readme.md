@@ -11,6 +11,8 @@ With help of a simple text input one can filter the list of the books.
 
 ![screen](https://cloud.githubusercontent.com/assets/11378781/13724806/e6c1cd10-e890-11e5-9a82-668d7517dd64.jpg)
 
+At the moment I'm working on a new version based on Google Polymer. You can find it here: [poly-ebook-server](https://www.npmjs.com/package/poly-ebook-server).
+
 ## Getting started
 
 
